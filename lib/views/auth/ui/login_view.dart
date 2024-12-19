@@ -1,4 +1,5 @@
 import 'package:ecommere/core/color_app.dart';
+import 'package:ecommere/views/auth/ui/widgets/custom_row_with_arrow.dart';
 import 'package:ecommere/views/auth/ui/widgets/custom_text_buttom.dart';
 import 'package:ecommere/views/auth/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -17,26 +18,30 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       body: SafeArea(
           child: ListView(
+        children: [
+
+          Column(
             children: [
-                    Column(
-                      children: [
-                                const Center(
-                                  child: Text(
-                                    "Welcome To Our Market",
-                                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 24,
-                                ),
-                                Card(
-                                  margin: const EdgeInsets.all(24),
-                                  color: AppColors.kWhiteColor,
-                                  shape: const RoundedRectangleBorder(
+                const SizedBox(
+                      height: 20,
+                    ),
+              const Center(
+                child: Text(
+                  "Welcome To Our Market",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Card(
+                margin: const EdgeInsets.all(24),
+                color: AppColors.kWhiteColor,
+                shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16))),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Column(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       const CustomTextFormField(labelText: 'Email'),
@@ -63,61 +68,24 @@ class _LoginViewState extends State<LoginView> {
                       const SizedBox(
                         height: 20,
                       ),
-                      InkWell(
+                          CustomRowWithArrowBtn(
+                        text: 'Login',
                         onTap: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CustomTextButton(
-                                onTap: () {},
-                                text: "Login",
-                                fontSize: 25,
-                                colorText: AppColors.kBlackColor),
-                            Container(
-                              width: 70,
-                              decoration: BoxDecoration(
-                                  color: AppColors.kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: IconButton(
-                                  onPressed: () {},
-                                  color: AppColors.kWhiteColor,
-                                  iconSize: 30,
-                                  icon: const Icon(Icons.arrow_forward_rounded)),
-                            )
-                          ],
-                        ),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CustomTextButton(
-                                onTap: () {},
-                                text: "Login With Google",
-                                fontSize: 25,
-                                colorText: AppColors.kBlackColor),
-                            Container(
-                              width: 70,
-                              decoration: BoxDecoration(
-                                  color: AppColors.kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: IconButton(
-                                  onPressed: () {},
-                                  color: AppColors.kWhiteColor,
-                                  iconSize: 30,
-                                  icon: const Icon(Icons.arrow_forward_rounded)),
-                            )
-                          ],
-                        ),
+                      CustomRowWithArrowBtn(
+                        text: 'Login With Google',
+                        onTap: () {
+                          
+                        },
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           const Text(
                             "Already have an account? ",
@@ -129,18 +97,18 @@ class _LoginViewState extends State<LoginView> {
                           CustomTextButton(
                               onTap: () {},
                               text: "Sign Up ",
-                              fontSize: 22,
+                              fontSize: 20,
                               colorText: AppColors.kPrimaryColor),
                         ],
                       )
                     ],
-                                    ),
-                                  ),
-                                ),
-                      ],
-                    ),
-                  ],
-          )),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      )),
     );
   }
 }
