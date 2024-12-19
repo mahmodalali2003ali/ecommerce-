@@ -1,3 +1,4 @@
+import 'package:ecommere/core/color_app.dart';
 import 'package:flutter/material.dart';
 
 import 'views/auth/ui/login_view.dart';
@@ -15,6 +16,7 @@ class OurMarket extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Our Market',
       theme:  ThemeData(
+        scaffoldBackgroundColor: AppColors.kScaffoldColor,
         useMaterial3: true
       ),
       home: LoginView(),

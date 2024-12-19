@@ -1,13 +1,146 @@
+import 'package:ecommere/core/color_app.dart';
+import 'package:ecommere/views/auth/ui/widgets/custom_text_buttom.dart';
+import 'package:ecommere/views/auth/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text(""),),
+  State<LoginView> createState() => _LoginViewState();
+}
 
+class _LoginViewState extends State<LoginView> {
+  @override
+  Widget build(BuildContext context) {
+    bool isSecured = true;
+    return Scaffold(
+      body: SafeArea(
+          child: ListView(
+            children: [
+                    Column(
+                      children: [
+                                const Center(
+                                  child: Text(
+                                    "Welcome To Our Market",
+                                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 24,
+                                ),
+                                Card(
+                                  margin: const EdgeInsets.all(24),
+                                  color: AppColors.kWhiteColor,
+                                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const CustomTextFormField(labelText: 'Email'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      CustomTextFormField(
+                        isSecured: isSecured,
+                        labelText: 'Passowrd',
+                        suffIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.visibility_off),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      CustomTextButton(
+                        onTap: () {},
+                        text: "Forgot Password?",
+                        fontSize: 22,
+                        colorText: AppColors.kPrimaryColor,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomTextButton(
+                                onTap: () {},
+                                text: "Login",
+                                fontSize: 25,
+                                colorText: AppColors.kBlackColor),
+                            Container(
+                              width: 70,
+                              decoration: BoxDecoration(
+                                  color: AppColors.kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  color: AppColors.kWhiteColor,
+                                  iconSize: 30,
+                                  icon: const Icon(Icons.arrow_forward_rounded)),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomTextButton(
+                                onTap: () {},
+                                text: "Login With Google",
+                                fontSize: 25,
+                                colorText: AppColors.kBlackColor),
+                            Container(
+                              width: 70,
+                              decoration: BoxDecoration(
+                                  color: AppColors.kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  color: AppColors.kWhiteColor,
+                                  iconSize: 30,
+                                  icon: const Icon(Icons.arrow_forward_rounded)),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            "Already have an account? ",
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: AppColors.kBlackColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          CustomTextButton(
+                              onTap: () {},
+                              text: "Sign Up ",
+                              fontSize: 22,
+                              colorText: AppColors.kPrimaryColor),
+                        ],
+                      )
+                    ],
+                                    ),
+                                  ),
+                                ),
+                      ],
+                    ),
+                  ],
+          )),
     );
   }
 }
